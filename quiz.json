@@ -1,0 +1,58 @@
+[
+    {
+        "question":" 2 multiply by 4 equals:",
+        "answer1":"6",
+        "answer2":"8",
+        "answer3":"40",
+        "answer4":"10",
+        "correct":"8"
+    },
+    {"question":" 2 multiply by 6 equals:",
+        "answer1":"7",
+        "answer2":"9",
+        "answer3":"12",
+        "answer4":"2",
+        "correct":"12"
+
+    },
+    {
+        "question":" 8 multiply by 8 equals:",
+        "answer1":"64",
+        "answer2":"81",
+        "answer3":"40",
+        "answer4":"40",
+        "correct":"64"
+    },
+    {
+        "question":" 7 multiply by 5 equals:",
+        "answer1":"61",
+        "answer2":"35",
+        "answer3":"40",
+        "answer4":"10",
+        "correct":"35"
+    },
+    {"question":" 5 multiply by 5 equals:",
+        "answer1":"26",
+        "answer2":"82",
+        "answer3":"25",
+        "answer4":"70",
+        "correct":"25"
+    },
+    {
+        "question":" 9 multiply by 4 equals:",
+        "answer1":"68",
+        "answer2":"85",
+        "answer3":"40",
+        "answer4":"36",
+        "correct":"63"
+    },
+    {
+        "question":" 10 multiply by 10 equals:",
+        "answer1":"65",
+        "answer2":"100",
+        "answer3":"41",
+        "answer4":"110",
+        "correct":"100"
+    }
+
+]
