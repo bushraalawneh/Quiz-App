@@ -11,6 +11,20 @@ body {
   background: #f8f8f8;
   padding: 15px;
 }
+.quiz-app .section {
+  margin: 15px;
+  padding: 15px;
+  background: #f8f8f8;
+}
+.quiz-app .section button {
+  margin: 15px;
+  padding: 10px;
+  width: 100px;
+  color: #fff;
+  background-color: black;
+  border: none;
+  text-align: center;
+}
 .quiz-app .quiz-info {
   display: flex;
   -ms-dispaly: flex;
@@ -51,7 +65,7 @@ body {
   padding: 10px;
   width: 100px;
   color: #fff;
-  background-color: black;
+  background-color: blue;
   border: none;
   text-align: center;
 }

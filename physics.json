@@ -1,0 +1,74 @@
+[
+    {
+        "title":"Product of Force and Velocity is called:",
+        "answer1":"work",
+        "answer2":"power",
+        "answer3":"energy",
+        "answer4":"momentum",
+        "correct":"power"
+
+    },
+    {
+        "title":"If electrical conductivity increases with the increase of temperature of a substance, then it is a:",
+        "answer1":"Conductor",
+        "answer2":"Semiconductor",
+        "answer3":"Insulator",
+        "answer4":"Carborator",
+        "correct":"Semiconductor"
+
+    },
+    {
+        "title":"Which one of the following has the highest value of specific heat ?",
+        "answer1":"Alcohol",
+        "answer2":"Methane",
+        "answer3":"KeroseneD",
+        "answer4":"Water",
+        "correct":"Water"
+
+    },
+    {
+        "title":"With the increase of pressure, the boiling point of any substance",
+        "answer1":"Increases",
+        "answer2":"Decreases",
+        "answer3":"Remains Same",
+        "answer4":"Becomes zero",
+        "correct":"Increases"
+
+    },
+    {
+        "title":"Elecronegativity is the measure of:",
+        "answer1":"Metallic character",
+        "answer2":"Non-metallic character",
+        "answer3":"Basic Character",
+        "answer4":"None of these",
+        "correct":"Non-metallic character"
+
+    },
+    {
+        "title":"The rotational effect of a force on a body about an axis of rotation is described in terms of the",
+        "answer1":"Centre of gravity",
+        "answer2":"Centripetal force",
+        "answer3":"Centrifugal force",
+        "answer4":"Moment of force",
+        "correct":"Moment of force"
+
+    },
+    {
+        "title":"Which law is also called the law of inertia ?",
+        "answer1":"Newton's first law",
+        "answer2":"Newton's Second Law",
+        "answer3":"Newton's Third Law",
+        "answer4":"All of these",
+        "correct":"Newton's first law"
+
+    },
+    {
+        "title":"Energy possessed by a body in motion is called",
+        "answer1":"Kinetic Energy",
+        "answer2":"Potential Energy",
+        "answer3":"Both A and B",
+        "answer4":"None of these",
+        "correct":"Kinetic Energy"
+
+    }   
+]

@@ -3,16 +3,21 @@ let countSpan=document.querySelector(".quiz-info .que-count span");
 let bulletsContainer=document.querySelector(".bullets .spans");
 let thebullet=document.querySelector(".bullets");
 let quizArea=document.querySelector(".quiz-area");
-let  answersArea=document.querySelector(".answers-area");
-let thebutton=document.querySelector(".submit-button");
+let answersArea=document.querySelector(".answers-area");
+let theSubmitDiv=document.querySelector(".submit");
 let theResult=document.querySelector(".que-res");
-let countDown=document.querySelector(".countdown")
-
-
+let countDown=document.querySelector(".countdown");
+let mathbutton=document.querySelector(".section .math");
+let physicsbutton=document.querySelector(".section .physics");
+let htmlbutton=document.querySelector(".section .html");
+ let sum=5; 
  let currentIndex=0;
+ let i=0;
+ let x=0; 
+ let q;
  let TheCorrectAnswers=0;
-
-function getquestions(){
+ let theButton;
+ mathbutton.addEventListener('click', function getquestions() {
     let request = new XMLHttpRequest();
      request.onreadystatechange=function (){
         
@@ -20,41 +25,151 @@ function getquestions(){
              //console.log(this.responseText);
              let thequestions=JSON.parse(this.responseText);
              let questionsCount=thequestions.length;
-             
+             let qAr=Array.from({length:questionsCount},(i,y)=>y);
+             //console.log(qAr);
+              newArray=randomQ(qAr,sum);
+              console.log("currentindex:",newArray);
+              q=newArray[x];
+              console.log("q:",q);
+
              //console.log(thequestions);
              //console.log(thequestions[currentIndex].title)
-             //console.log(questionsCount);
-             createbullets(questionsCount);
-             
-             addQuestion(thequestions[currentIndex],questionsCount);
-             countdown(4,questionsCount)
+             //console.log("math:",questionsCount);
+             createbullets(sum);
+             addQuestion(thequestions[q],sum);
+             submitbutton();
+             countdown(4,sum);
+             physicsbutton.setAttribute('disabled', true);
+             htmlbutton.setAttribute('disabled', true);
+             mathbutton.setAttribute('disabled', true);
 
-             thebutton.onclick = ()=>{
-                 if(currentIndex < questionsCount){let theRightAnswer=thequestions[currentIndex].correct;
-                 checkAnswers(theRightAnswer,questionsCount);
-                 currentIndex++;
+             theButton.onclick = ()=>{
+                 if(x < sum){
+                     let theRightAnswer=thequestions[q].correct;
+                 checkAnswers(theRightAnswer,sum);
+                 x++;
+                 q=newArray[x];
                  quizArea.innerHTML="";
                  answersArea.innerHTML="";
-                 addQuestion(thequestions[currentIndex],questionsCount);
-                 handlebullets(currentIndex,questionsCount);
-                 showresult(questionsCount);
-                 clearInterval(countDownInterval)
-                 countdown(4,questionsCount);
-
-
-
-                 
+                 addQuestion(thequestions[q],sum);
+                 handlebullets(x,sum);
+                 showresult(sum);
+                 clearInterval(countDownInterval);
+                 countdown(4,sum-1);
+                  
 
              }
-}
-                  
+  }              
          }
      };
     request.open("GET","quiz.json",true);
     request.send();
-}
- getquestions()
+ });
+ physicsbutton.addEventListener('click', function getquestions() {
+    let request = new XMLHttpRequest();
+     request.onreadystatechange=function (){
+        
+         if(this.readyState === 4 && this.status === 200){
+             //console.log(this.responseText);
+             let thequestions=JSON.parse(this.responseText);
+             let questionsCount=thequestions.length;
+             let qAr=Array.from({length:questionsCount},(i,y)=>y);
+             //console.log(qAr);
+              newArray=randomQ(qAr,sum);
+              console.log("currentindex:",newArray);
+              q=newArray[x];
+              console.log("q:",q);
 
+             //console.log(thequestions);
+             //console.log(thequestions[currentIndex].title)
+             //console.log("math:",questionsCount);
+             createbullets(sum);
+             addQuestion(thequestions[q],sum);
+             submitbutton();
+             countdown(4,sum);
+             physicsbutton.setAttribute('disabled', true);
+             htmlbutton.setAttribute('disabled', true);
+             mathbutton.setAttribute('disabled', true);
+
+             theButton.onclick = ()=>{
+                 if(x < sum){
+                     let theRightAnswer=thequestions[q].correct;
+                 checkAnswers(theRightAnswer,sum);
+                 x++;
+                 q=newArray[x];
+                 quizArea.innerHTML="";
+                 answersArea.innerHTML="";
+                 addQuestion(thequestions[q],sum);
+                 handlebullets(x,sum);
+                 showresult(sum);
+                 clearInterval(countDownInterval);
+                 countdown(4,sum-1);
+                  
+
+             }
+  }              
+         }
+     };
+    request.open("GET","physics.json",true);
+    request.send();
+ });
+ htmlbutton.addEventListener('click', function getquestions() {
+    let request = new XMLHttpRequest();
+     request.onreadystatechange=function (){
+        
+         if(this.readyState === 4 && this.status === 200){
+             //console.log(this.responseText);
+             let thequestions=JSON.parse(this.responseText);
+             let questionsCount=thequestions.length;
+             let qAr=Array.from({length:questionsCount},(i,y)=>y);
+             //console.log(qAr);
+              newArray=randomQ(qAr,sum);
+              console.log("currentindex:",newArray);
+              q=newArray[x];
+              console.log("q:",q);
+
+             //console.log(thequestions);
+             //console.log(thequestions[currentIndex].title)
+             //console.log("math:",questionsCount);
+             createbullets(sum);
+             addQuestion(thequestions[q],sum);
+             submitbutton();
+             countdown(4,sum);
+             physicsbutton.setAttribute('disabled', true);
+             htmlbutton.setAttribute('disabled', true);
+             mathbutton.setAttribute('disabled', true);
+
+             theButton.onclick = ()=>{
+                 if(x < sum){
+                     let theRightAnswer=thequestions[q].correct;
+                 checkAnswers(theRightAnswer,sum);
+                 x++;
+                 q=newArray[x];
+                 quizArea.innerHTML="";
+                 answersArea.innerHTML="";
+                 addQuestion(thequestions[q],sum);
+                 handlebullets(x,sum);
+                 showresult(sum);
+                 clearInterval(countDownInterval);
+                 countdown(4,sum-1);
+                  
+
+             }
+  }              
+         }
+     };
+    request.open("GET","html.json",true);
+    request.send();
+ });
+
+ 
+  function submitbutton(){
+       theButton=document.createElement("button");
+      theButton.className="submit-button";
+      let text=document.createTextNode("submit");
+      theButton.appendChild(text);
+      theSubmitDiv.appendChild(theButton);
+  }
 
  function createbullets(num){
      countSpan.innerHTML=num;
@@ -69,7 +184,7 @@ function getquestions(){
     }}
 
  function addQuestion(obj,count){
-     if (currentIndex < count){
+     if (x < count){
          //create h2 question
      let questiontitle=document.createElement("h2");
      let qtext=document.createTextNode(obj.title);
@@ -119,8 +234,8 @@ function getquestions(){
            }
        }
        function handlebullets(index,count){
-           if(currentIndex < count){ 
-               if(currentIndex == index){
+           if( x < count){ 
+               if(x == index){
                let thespans=document.querySelectorAll(".bullets .spans span");
                thespans[index].className="on";
        }}
@@ -133,7 +248,7 @@ function getquestions(){
                 quizArea.remove();
                 answersArea.remove();
                 thebullet.remove();
-                thebutton.remove();
+                theButton.remove();
                 if (TheCorrectAnswers > (count/2) && TheCorrectAnswers < count) {
                     
                     result=` YOU ARE <span class="good">GOOD</span> YOU ANSWERED ${TheCorrectAnswers} OUT OF ${count}`
@@ -158,7 +273,7 @@ function getquestions(){
                 
             }
             function countdown(duration,count){
-                if (currentIndex < count){
+                if (x < count){
                     countDownInterval=setInterval(function(){
                     let minutes= parseInt(duration / 60);
                     let seconds= parseInt(duration % 60);
@@ -169,9 +284,29 @@ function getquestions(){
                     duration--;
                     if (duration<0){
                         clearInterval(countDownInterval);
-                        thebutton.click();
+                        theButton.click();
                     }
                     },1000)
                 }
                 
             }
+             function randomQ(arr,sum){
+                 let newArray=[];
+                 let x;
+                 while(sum> newArray.length ){
+                     x=Math.floor(Math.random()*sum);
+                     if(newArray.includes(x)==false){
+                         newArray.push(x)
+                
+                     } 
+                 }
+                 return newArray;
+                }
+                
+                
+
+
+             
+
+            
+               
