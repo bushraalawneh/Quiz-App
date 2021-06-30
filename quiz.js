@@ -52,10 +52,13 @@ let htmlbutton=document.querySelector(".section .html");
                  quizArea.innerHTML="";
                  answersArea.innerHTML="";
                  addQuestion(thequestions[q],sum);
-                 handlebullets(x,sum);
+                 handlebullets(x,sum); 
                  showresult(sum);
-                 clearInterval(countDownInterval);
-                 countdown(4,sum-1);
+                clearInterval(countDownInterval);
+                 countdown(4,sum);
+                 
+                
+                
                   
 
              }
@@ -103,7 +106,7 @@ let htmlbutton=document.querySelector(".section .html");
                  handlebullets(x,sum);
                  showresult(sum);
                  clearInterval(countDownInterval);
-                 countdown(4,sum-1);
+                 countdown(4,sum);
                   
 
              }
@@ -151,7 +154,7 @@ let htmlbutton=document.querySelector(".section .html");
                  handlebullets(x,sum);
                  showresult(sum);
                  clearInterval(countDownInterval);
-                 countdown(4,sum-1);
+                 countdown(4,sum);
                   
 
              }
@@ -243,7 +246,7 @@ let htmlbutton=document.querySelector(".section .html");
           }
         function  showresult(count){
             let result;
-            if(currentIndex === count){
+            if(x === count){
                  
                 quizArea.remove();
                 answersArea.remove();
